@@ -95,6 +95,50 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   multiSpriteImportData: []
   layeredSpriteImportData:
+  - name: window_repair
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 3214
+      y: 4100
+      width: 200
+      height: 452
+    spriteID: 0f394021de87f714cb4315dd24385985
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3214, y: 4100}
+    spritePosition: {x: 3795, y: 2702}
+  - name: window_old
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 3003
+      y: 4100
+      width: 203
+      height: 451
+    spriteID: 4562d6cd4d6e59147a5f9226796b262c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3003, y: 4100}
+    spritePosition: {x: 3797, y: 2698}
   - name: pole_repair
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -117,116 +161,6 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 1943}
     spritePosition: {x: 2935, y: 1453}
-  - name: floor_repair
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4100
-      width: 2123
-      height: 863
-    spriteID: ee2ee0a813254494cbf2ebbd0c22374e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 4100}
-    spritePosition: {x: 2935, y: 1408}
-  - name: window_repair
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 2779
-      y: 4100
-      width: 200
-      height: 452
-    spriteID: 0f394021de87f714cb4315dd24385985
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 2779, y: 4100}
-    spritePosition: {x: 3795, y: 2702}
-  - name: wall_repair
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 2135
-      y: 4100
-      width: 425
-      height: 557
-    spriteID: 353ab58d0cfb4d84baa432dfc75a2ee4
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 2135, y: 4100}
-    spritePosition: {x: 2935, y: 2259}
-  - name: window_old
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 2568
-      y: 4100
-      width: 203
-      height: 451
-    spriteID: 4562d6cd4d6e59147a5f9226796b262c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 2568, y: 4100}
-    spritePosition: {x: 3797, y: 2698}
-  - name: floor_old
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    customData: 
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4971
-      width: 1997
-      height: 666
-    spriteID: f34220dc4ce77474bbd6f1b80c8a7cea
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 4971}
-    spritePosition: {x: 3008, y: 1454}
   - name: pole_old
     originalName: 
     pivot: {x: 0.5, y: 0.5}
@@ -249,7 +183,95 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 4, y: 3023}
     spritePosition: {x: 2935, y: 1454}
-  - name: old
+  - name: wall_repair
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2570
+      y: 4100
+      width: 425
+      height: 557
+    spriteID: 353ab58d0cfb4d84baa432dfc75a2ee4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2570, y: 4100}
+    spritePosition: {x: 2935, y: 2259}
+  - name: wall_old
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 2137
+      y: 4100
+      width: 425
+      height: 558
+    spriteID: deaabb59940be024d9b969fbe544748f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2137, y: 4100}
+    spritePosition: {x: 2929, y: 2253}
+  - name: floor_repair
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4972
+      width: 2123
+      height: 863
+    spriteID: ee2ee0a813254494cbf2ebbd0c22374e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4972}
+    spritePosition: {x: 2935, y: 1408}
+  - name: floor_old
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    customData: 
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4100
+      width: 2125
+      height: 864
+    spriteID: d7e8916229b230d42a9393b400a13086
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4100}
+    spritePosition: {x: 2934, y: 1407}
+  - name: house
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -310,6 +332,26 @@ ScriptedImporter:
   resliceFromLayer: 0
   pSDLayerImportSetting: []
   psdLayers:
+  - name: window_repair
+    spriteName: window_repair
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 0f394021de87f714cb4315dd24385985
+    layerID: 14
+    mosaicPosition: {x: 3214, y: 4100}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: window_old
+    spriteName: window_old
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 4562d6cd4d6e59147a5f9226796b262c
+    layerID: 21
+    mosaicPosition: {x: 3003, y: 4100}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: pole_repair
     spriteName: pole_repair
     isGroup: 0
@@ -317,66 +359,6 @@ ScriptedImporter:
     spriteID: 2dcfca324d8a6a14f8ac9666aba470aa
     layerID: 9
     mosaicPosition: {x: 4, y: 1943}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: floor_repair
-    spriteName: floor_repair
-    isGroup: 0
-    parentIndex: -1
-    spriteID: ee2ee0a813254494cbf2ebbd0c22374e
-    layerID: 13
-    mosaicPosition: {x: 4, y: 4100}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: window_repair
-    spriteName: window_repair
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 0f394021de87f714cb4315dd24385985
-    layerID: 14
-    mosaicPosition: {x: 2779, y: 4100}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: wall_repair
-    spriteName: wall_repair
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 353ab58d0cfb4d84baa432dfc75a2ee4
-    layerID: 17
-    mosaicPosition: {x: 2135, y: 4100}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: build
-    spriteName: 
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 941a47268bd409d47a2be7a94180f636
-    layerID: 3
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
-  - name: window_old
-    spriteName: window_old
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 4562d6cd4d6e59147a5f9226796b262c
-    layerID: 21
-    mosaicPosition: {x: 2568, y: 4100}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: floor_old
-    spriteName: floor_old
-    isGroup: 0
-    parentIndex: -1
-    spriteID: f34220dc4ce77474bbd6f1b80c8a7cea
-    layerID: 23
-    mosaicPosition: {x: 4, y: 4971}
     flatten: 0
     isImported: 1
     isVisible: 1
@@ -390,8 +372,48 @@ ScriptedImporter:
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: old
-    spriteName: old
+  - name: wall_repair
+    spriteName: wall_repair
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 353ab58d0cfb4d84baa432dfc75a2ee4
+    layerID: 17
+    mosaicPosition: {x: 2570, y: 4100}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: wall_old
+    spriteName: wall_old
+    isGroup: 0
+    parentIndex: -1
+    spriteID: deaabb59940be024d9b969fbe544748f
+    layerID: 25
+    mosaicPosition: {x: 2137, y: 4100}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: floor_repair
+    spriteName: floor_repair
+    isGroup: 0
+    parentIndex: -1
+    spriteID: ee2ee0a813254494cbf2ebbd0c22374e
+    layerID: 13
+    mosaicPosition: {x: 4, y: 4972}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: floor_old
+    spriteName: floor_old
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d7e8916229b230d42a9393b400a13086
+    layerID: 29
+    mosaicPosition: {x: 4, y: 4100}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: house
+    spriteName: house
     isGroup: 0
     parentIndex: -1
     spriteID: ccd9710db5b2733419f1ab5a5c4881e7
