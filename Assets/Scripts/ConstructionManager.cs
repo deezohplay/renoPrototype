@@ -5,9 +5,13 @@ public class ConstructionManager : MonoBehaviour
 {
     public TextMeshProUGUI coinText;
     public int coins;
-    public GameObject popUpBox;
+    public GameObject[] oldHousePrefabs;
+    public GameObject[] renoLevelOnePrefabs;
     public static ConstructionManager Instance { get; private set; }
     private SelectionManager selectionManager;
+    private CityManager cityManager;
+    public GameObject floor_repair;
+    private int confirmedCoin;
 
     void Awake()
     {
@@ -18,30 +22,14 @@ public class ConstructionManager : MonoBehaviour
     {
         coins = 180;
         selectionManager = FindObjectOfType<SelectionManager>();
-        UpdateWallet();
+       //UpdateWallet();
     }
 
     void Update()
     {
-        // Optional: test construction with a key press
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     TryConstruct();
-        // }
-    }
-
-    public void TryConstruct()
-    {
-        int cost = CoinsAmount();
-
-        if (cost > 0)
-        {
-            Construct(cost);
-        }
-        else
-        {
-            Debug.Log("No valid object selected.");
-        }
+        //runtime program here
+        UpdateWallet();
+        Construct(confirmedCoin);
     }
 
     private int CoinsAmount()
@@ -78,39 +66,44 @@ public class ConstructionManager : MonoBehaviour
         if (coinsToSpend > coins)
         {
             //Not enough money in the wallet
-
         }
         else
         {
             if (selectionManager.selectedObject != null)
             {
                 string buildingSection = selectionManager.selectedObject.name;
-
                 // actions on selected section
                 if (buildingSection == "floor_old")
                 {
-                    PopUpBox(selectionManager.selectedObject, "floor_new");
-                    //Renovate(selectionManager.selectedObject, "floor_new");
+                    /*
+                    coins-=coinsToSpend;
+                    Vector2 sectionPos = renoLevelOnePrefabs[0].transform.position;
+                    Instantiate(renoLevelOnePrefabs[0], sectionPos, Quaternion.identity);
+                    renoLevelOnePrefabs[0].SetActive(true);
+                    */
+                    floor_repair.SetActive(true);
+                    Debug.Log("show me");
                 }
                 else if (buildingSection == "wall_old")
                 {
-                    //Renovate(selectionManager.selectedObject, "wall_new");
+                  
                 }
                 else if (buildingSection == "pole_old")
                 {
-                    //Renovate(selectionManager.selectedObject, "pole_new");
+                    
                 }
                 else if (buildingSection == "window_old")
                 {
-                    //Renovate(selectionManager.selectedObject, "window_new");
+                   
                 }
-
                 selectionManager.selectedObject = null;
             }
             coins -= coinsToSpend;
+            confirmedCoin = coinsToSpend;
             UpdateWallet();
         }
     }
+    /*
     private void Renovate(GameObject oldSection, string newSectionName)
     {
         Vector3 position = oldSection.transform.position;
@@ -126,20 +119,12 @@ public class ConstructionManager : MonoBehaviour
             //not sure quite
         }
     }
+    */
     private void UpdateWallet()
     {
         if (coinText != null)
         {
-            coinText.text = $" {coins}";
+            coinText.text = "$ " + coins.ToString();
         }
-    }
-
-    private void PopUpBox(GameObject oldSection, string newSectionName)
-    {
-        Vector2 position = oldSection.transform.position;
-        Vector2 offset = new Vector2(-0.5f, 0.5f);
-        Vector2 spawnPos = position + offset;
-
-        Instantiate(popUpBox, spawnPos, Quaternion.identity);
     }
 }
