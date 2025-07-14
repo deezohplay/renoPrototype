@@ -4,14 +4,11 @@ using TMPro;
 public class ConstructionManager : MonoBehaviour
 {
     public TextMeshProUGUI coinText;
-    public int coins;
+    private int coins = 500;
     public GameObject[] oldHousePrefabs;
     public GameObject[] renoLevelOnePrefabs;
     public static ConstructionManager Instance { get; private set; }
     private SelectionManager selectionManager;
-    private CityManager cityManager;
-    public GameObject floor_repair;
-    private int confirmedCoin;
 
     void Awake()
     {
@@ -20,19 +17,15 @@ public class ConstructionManager : MonoBehaviour
 
     void Start()
     {
-        coins = 180;
         selectionManager = FindObjectOfType<SelectionManager>();
-       //UpdateWallet();
+        UpdateWallet();
     }
-
     void Update()
     {
-        //runtime program here
         UpdateWallet();
-        Construct(confirmedCoin);
     }
 
-    private int CoinsAmount()
+    public int CoinsAmount()
     {
         int coinsToSpend = 0;
 
@@ -41,90 +34,73 @@ public class ConstructionManager : MonoBehaviour
             string buildingSection = selectionManager.selectedObject.name;
 
             if (buildingSection == "floor_old")
-            {
                 coinsToSpend = 100;
-            }
             else if (buildingSection == "wall_old")
-            {
                 coinsToSpend = 45;
-            }
             else if (buildingSection == "pole_old")
-            {
                 coinsToSpend = 70;
-            }
             else if (buildingSection == "window_old")
-            {
                 coinsToSpend = 35;
-            }
+        }
+        return coinsToSpend;
+    }
+
+    public void AttemptRenovation()
+    {
+        if (selectionManager.selectedObject == null)
+        {
+            return;
         }
 
-        return coinsToSpend;
+        int coinsToSpend = CoinsAmount();
+
+        if (coinsToSpend == 0)
+        {
+            return;
+        }
+
+        if (coinsToSpend > coins)
+        {
+            return;
+        }
+
+        Construct(coinsToSpend);
     }
 
     private void Construct(int coinsToSpend)
     {
-        if (coinsToSpend > coins)
-        {
-            //Not enough money in the wallet
-        }
-        else
-        {
-            if (selectionManager.selectedObject != null)
-            {
-                string buildingSection = selectionManager.selectedObject.name;
-                // actions on selected section
-                if (buildingSection == "floor_old")
-                {
-                    /*
-                    coins-=coinsToSpend;
-                    Vector2 sectionPos = renoLevelOnePrefabs[0].transform.position;
-                    Instantiate(renoLevelOnePrefabs[0], sectionPos, Quaternion.identity);
-                    renoLevelOnePrefabs[0].SetActive(true);
-                    */
-                    floor_repair.SetActive(true);
-                    Debug.Log("show me");
-                }
-                else if (buildingSection == "wall_old")
-                {
-                  
-                }
-                else if (buildingSection == "pole_old")
-                {
-                    
-                }
-                else if (buildingSection == "window_old")
-                {
-                   
-                }
-                selectionManager.selectedObject = null;
-            }
-            coins -= coinsToSpend;
-            confirmedCoin = coinsToSpend;
-            UpdateWallet();
-        }
-    }
-    /*
-    private void Renovate(GameObject oldSection, string newSectionName)
-    {
-        Vector3 position = oldSection.transform.position;
+        GameObject selected = selectionManager.selectedObject;
+        string buildingSection = selected.name;
+        int prefabIndex = -1;
 
-        GameObject newSections = Resources.Load<GameObject>(newSectionName);
-        if (newSections != null)
+        if (buildingSection == "floor_old")
+            prefabIndex = 0;
+        else if (buildingSection == "wall_old")
+            prefabIndex = 1;
+        else if (buildingSection == "pole_old")
+            prefabIndex = 2;
+        else if (buildingSection == "window_old")
+            prefabIndex = 3;
+
+        if (prefabIndex >= 0)
         {
-            Instantiate(newSections, position, Quaternion.identity);
-            Destroy(oldSection);
+            coins -= coinsToSpend;
+
+            Vector2 sectionPos = selected.transform.position;
+
+            GameObject newPrefab = Instantiate(renoLevelOnePrefabs[prefabIndex],sectionPos,Quaternion.identity);
+            newPrefab.SetActive(true);
+            //Destroy(selected);
         }
-        else
-        {
-            //not sure quite
-        }
+
+        selectionManager.ClearSelection();
     }
-    */
+
     private void UpdateWallet()
     {
         if (coinText != null)
         {
-            coinText.text = "$ " + coins.ToString();
+            coinText.text = "$" + coins.ToString();
         }
     }
 }
