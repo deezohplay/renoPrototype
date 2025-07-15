@@ -21,6 +21,7 @@ public class SelectionManager : MonoBehaviour
     private Color previousOriginalColor;
     private GameObject currentPopup;
     private ConstructionManager constructionManager;
+    private GameManager gameManager;
 
     void Awake()
     {
@@ -37,22 +38,26 @@ public class SelectionManager : MonoBehaviour
     void Start()
     {
         constructionManager = ConstructionManager.Instance;
+        gameManager = GameManager.Instance;
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Collider2D hitCollider = Physics2D.OverlapPoint(worldPoint);
+        if (gameManager.isGameStarted == true) {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Collider2D hitCollider = Physics2D.OverlapPoint(worldPoint);
 
-            if (hitCollider != null)
-            {
-                SelectObject(hitCollider.gameObject, worldPoint);
-            }
-            else
-            {
-                ClearSelection();
+                if (hitCollider != null)
+                {
+                    SelectObject(hitCollider.gameObject, worldPoint);
+                    //constructionManager.AttemptRenovation();
+                }
+                else
+                {
+                    ClearSelection();
+                }
             }
         }
     }
@@ -79,6 +84,7 @@ public class SelectionManager : MonoBehaviour
         }
 
         ShowPopupButton(worldPoint);
+        
     }
 
     private void ShowPopupButton(Vector2 worldPoint)
@@ -128,6 +134,11 @@ public class SelectionManager : MonoBehaviour
         }
     }
 
+    public void OnPopupButtonClicked()
+    {
+        constructionManager.AttemptRenovation();
+        ClearSelection();
+    }
     private void ClearPopup()
     {
         if (currentPopup != null)

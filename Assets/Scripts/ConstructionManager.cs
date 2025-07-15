@@ -82,7 +82,7 @@ public class ConstructionManager : MonoBehaviour
         else if (buildingSection == "window_old")
             prefabIndex = 3;
 
-        if (prefabIndex >= 0)
+        if (prefabIndex >= 0 && selectionManager.selectedObject != null)
         {
             coins -= coinsToSpend;
 
@@ -90,7 +90,7 @@ public class ConstructionManager : MonoBehaviour
 
             GameObject newPrefab = Instantiate(renoLevelOnePrefabs[prefabIndex],sectionPos,Quaternion.identity);
             newPrefab.SetActive(true);
-            //Destroy(selected);
+            Destroy(selected);
         }
 
         selectionManager.ClearSelection();
